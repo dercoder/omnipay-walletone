@@ -92,12 +92,12 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         $string = '';
 
         foreach ($data as $value) {
-            if (is_array($value))
+            if (is_array($value)) {
                 foreach ($value as $v) {
                     $v = iconv('utf-8', 'windows-1251', $v);
                     $string .= $v;
                 }
-            else {
+            } else {
                 $value = iconv('utf-8', 'windows-1251', $value);
                 $string .= $value;
             }
